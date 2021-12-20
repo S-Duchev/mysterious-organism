@@ -30,16 +30,15 @@ const pAequorFactory = (specimenNum, dna) => {
     },
 
     compareDNA(pAequorDiffrent) {
-      let identical = 0;
-
+      let sameBaseCount = 0;
       for (let i = 0; i < this.dna.length; i++) {
 
         if (this.dna[i] === pAequorDiffrent.dna[i]) {
-          identical++;
+          sameBaseCount++;
         }
 
       }
-      let result = identical / this.dna.length * 100;
+      let result = sameBaseCount / this.dna.length * 100;
       return result.toFixed(1);
     },
   };
@@ -50,4 +49,4 @@ const test2 = pAequorFactory(2, mockUpStrand());
 console.log(`${test1.dna} -- Our first DNA strand. \n`);
 console.log(`${test1.mutate()} -- Mutated DNA. \n`);
 console.log(`${test2.dna} -- Our second DNA strand.\n`);
-console.log(`Both DNA sequences have : ${test1.compareDNA(test2)}% in common`);
+console.log(`Percentage in common -- ${test1.compareDNA(test2)}%`);
