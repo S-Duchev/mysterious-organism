@@ -7,9 +7,9 @@ const returnRandBase = () => {
 // Returns a random single stand of DNA containing 15 bases
 const mockUpStrand = () => {
   const newStrand = [];
-   for (let i = 0; i < 15; i++) {
-     newStrand.push(returnRandBase());
-   }
+  for (let i = 0; i < 15; i++) {
+    newStrand.push(returnRandBase());
+  }
   return newStrand;
 };
 
@@ -30,13 +30,24 @@ const pAequorFactory = (specimenNum, dna) => {
     },
 
     compareDNA(pAequorDiffrent) {
+      let identical = 0;
 
+      for (let i = 0; i < this.dna.length; i++) {
+
+        if (this.dna[i] === pAequorDiffrent.dna[i]) {
+          identical++;
+        }
+
+      }
+      let result = identical / this.dna.length * 100;
+      return result.toFixed(1);
     },
   };
 }
-const test1 = pAequorFactory(1,mockUpStrand());
-const test2 = pAequorFactory(2,mockUpStrand());
-console.log(`Our DNA is: ${test1.dna}`); //?
-console.log(`Mutated DNA: ${test1.mutate()}`); //? 
-console.log(`Both DNA sequences have : ${test1.mutate()}`);//?
+const test1 = pAequorFactory(1, mockUpStrand());
+const test2 = pAequorFactory(2, mockUpStrand());
 
+console.log(`${test1.dna} -- Our first DNA strand. \n`);
+console.log(`${test1.mutate()} -- Mutated DNA. \n`);
+console.log(`${test2.dna} -- Our second DNA strand.\n`);
+console.log(`Both DNA sequences have : ${test1.compareDNA(test2)}% in common`);
