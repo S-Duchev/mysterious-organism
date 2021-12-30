@@ -79,11 +79,11 @@ const pAequorFactory = (specimenNum, dna) => {
     }
   };
 }
-//const test1 = pAequorFactory(1, mockUpStrand());
+const test1 = pAequorFactory(1, mockUpStrand());
 //const test2 = pAequorFactory(2, mockUpStrand());
 
 //console.log(likelySurviveArray);
-//console.log(`${test1.dna} -- Our first DNA strand. \n`);
+console.log(`${test1.dna} -- Our first DNA strand. \n`);
 //console.log(`${test1.mutate()} -- Mutated DNA. \n`);
 //console.log(`${test2.dna} -- Our second DNA strand.\n`);
 //console.log(`Percentage in common -- ${test1.compareDNA(test2)}%`);
