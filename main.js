@@ -93,9 +93,9 @@ for (let i = 1; i <= 30; i++) {
   let test = pAequorFactory(i, mockUpStrand());
   if (test.willLikelySurvive() === true) {
 
-    //   console.log(`Test #${o} ${likelySurviveArray[0, likelySurviveArray.length -1]} will likely survive `);
+     console.log(`Test #${i} ${likelySurviveArray[0, likelySurviveArray.length -1]} has 60% or more C/G bases `);
   };
 
 }
 console.log(likelySurviveArray);
-console.log(test1.complementDNA());
+console.log(`First DNA test using complementDNA() -- ${test1.complementDNA()}`);
